@@ -30,7 +30,7 @@ from .renderTune_op import RENDERTUNE_OT_Operator
 #TODO convert this to new code using bpy.utils.register_classes_factory()
 def register():
     bpy.types.Scene.render_alert = bpy.props.BoolProperty(
-        name="Alert when Render is Complete",
+        name="",
         description="Plays a tune when Render Completes",
         default = False)
     bpy.utils.register_class(renderTune_panel)

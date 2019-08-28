@@ -10,10 +10,14 @@ class renderTune_panel(bpy.types.Panel):
     bl_context = "render"
     bl_options = {'DEFAULT_CLOSED'}
 
+    def draw_header(self, context):
+        self.layout.prop(context.scene,"render_alert")
+    
     def draw(self, context):
         layout=self.layout
         scene = context.scene
-        layout.prop(scene, "render_alert")
+        layout.label(text="Comming Soon")
+      #layout.prop(scene, "render_alert")
 
     #TODO link to the Operator
     #TODO logic to check if the check box is ticked or Not
