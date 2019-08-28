@@ -14,7 +14,7 @@
 bl_info = {
     "name" : "Render Tune",
     "author" : "Goodluck Focus",
-    "description" : "",
+    "description" : "Plays A Tune on Frame Render Completion",
     "blender" : (2, 80, 0),
     "version" : (0, 0, 1),
     "location" : "",
@@ -24,7 +24,8 @@ bl_info = {
 
 import bpy
 from .renderTune_panel import renderTune_panel
+from .renderTune_op import RENDERTUNE_OT_Operator
 
-classes = (renderTune_panel,)
+classes = (renderTune_panel,RENDERTUNE_OT_Operator)
 
 register, unregister = bpy.utils.register_classes_factory(classes)
