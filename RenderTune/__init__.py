@@ -19,13 +19,25 @@ bl_info = {
     "version" : (0, 0, 1),
     "location" : "",
     "warning" : "",
-    "category" : "Generic"
+    "category" : "Render"
 }
 
 import bpy
 from .renderTune_panel import renderTune_panel
 from .renderTune_op import RENDERTUNE_OT_Operator
 
-classes = (renderTune_panel,RENDERTUNE_OT_Operator)
 
-register, unregister = bpy.utils.register_classes_factory(classes)
+#TODO convert this to new code using bpy.utils.register_classes_factory()
+def register():
+    bpy.types.Scene.render_alert = bpy.props.BoolProperty(
+        name="Alert when Render is Complete",
+        description="Plays a tune when Render Completes",
+        default = False)
+    bpy.utils.register_class(renderTune_panel)
+    bpy.utils.register_class (RENDERTUNE_OT_Operator)
+
+
+def unregister():
+    bpy.utils.unregister_class(renderTune_panel)
+    bpy.utils.unregister_class (RENDERTUNE_OT_Operator)
+    del bpy.types.Scene.render_alert
