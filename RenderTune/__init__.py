@@ -24,7 +24,7 @@ bl_info = {
 
 import bpy
 from .renderTune_panel import renderTune_panel
-from .renderTune import tuneProps, end_music
+from .renderTune import tuneProps, play_tune
 
 
 #TODO convert this to new code using bpy.utils.register_classes_factory()
@@ -32,9 +32,9 @@ def register():
     bpy.utils.register_class(tuneProps)
     bpy.utils.register_class(renderTune_panel)
     bpy.types.RenderSettings.music_handle = None
-    bpy.app.handlers.render_complete.append(end_music)
+    bpy.app.handlers.render_complete.append(play_tune)
 
 def unregister():
     bpy.utils.unregister_class(tuneProps)
     bpy.utils.unregister_class(renderTune_panel)
-    bpy.app.handlers.render_complete.remove(end_music)
+    bpy.app.handlers.render_complete.remove(play_tune)
