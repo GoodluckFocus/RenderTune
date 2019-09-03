@@ -10,7 +10,6 @@ def play_tune(scene):
     
     if addon_prefs.tuneEnabler:
         device = aud.Device()
-        #device.volume=
         tunePlay = aud.Sound.file(addon_prefs.tuneLocation)
         bpy.types.RenderSettings.music_handle = device.play(tunePlay)
 
@@ -33,8 +32,3 @@ class tuneProps(bpy.types.AddonPreferences):
         name = "Alert Render Tune",
         description = "Enable or Disable Tune Play on Render Completion",
         default = True)
-
-    tuneVolume = bpy.props.FloatProperty(
-        name = "Volume",
-        default = 1,
-        description = "Sets the Volume of the Tune")
