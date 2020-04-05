@@ -12,8 +12,8 @@ class renderTune_panel(bpy.types.Panel):
     def draw(self, context):
       addon_prefs =bpy.context.preferences.addons[__package__].preferences
       layout = self.layout
-      layout.prop(addon_prefs, "tuneEnabler")
-      layout.label(text = "Comming Soon: Tune location preference")  #TODO adding functionality to let the user select his/her tune of preference
-      layout.label(text = "Comming Soon: Volume Control")  #TODO Adding volume control functionality if possible
-      layout.label(text = "Comming Soon: Render Error ALERT") #TODO Add tune to play when render error occurs e.g out of disk space
+
+      layout.prop(addon_prefs, "tuneEnabler") #Render Complete tune
+      layout.prop(addon_prefs, "errorTune") # Render Error tune
+      layout.prop(addon_prefs, "tuneVol")  #Volume dialing Slide
       
