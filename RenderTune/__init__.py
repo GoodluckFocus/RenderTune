@@ -15,8 +15,8 @@ bl_info = {
     "name" : "Render Tune",
     "author" : "Goodluck Focus", # inspired by Jason van Gumster (Fweeb)
     "description" : "Plays A Tune on Frame Render Completion",
-    "blender" : (2, 80, 0),
-    "version" : (0, 0, 1),
+    "blender" : (2, 82, 0),
+    "version" : (2, 0, 1),
     "location" : "Render Settings > Render Tune",
     "warning" : "",
     "category" : "Render"
@@ -28,13 +28,15 @@ from .renderTune import tuneProps, play_tune
 
 
 #TODO convert this to new code using bpy.utils.register_classes_factory()
+
+
 def register():
-    bpy.utils.register_class(tuneProps)
-    bpy.utils.register_class(renderTune_panel)
+    bpy.utils.register_classes(tuneProps)
+    bpy.utils.register_classes(renderTune_panel)
     bpy.types.RenderSettings.music_handle = None
     bpy.app.handlers.render_complete.append(play_tune)
 
 def unregister():
-    bpy.utils.unregister_class(tuneProps)
-    bpy.utils.unregister_class(renderTune_panel)
+    bpy.utils.unregister_classes(tuneProps)
+    bpy.utils.unregister_classes(renderTune_panel)
     bpy.app.handlers.render_complete.remove(play_tune)
