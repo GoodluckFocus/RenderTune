@@ -7,10 +7,15 @@ def play_tune(scene):
     handle = bpy.types.RenderSettings.music_handle
     addon_prefs = bpy.context.preferences.addons[__package__].preferences
     
+    #TODO Create a logic for the 3 states
+    # when render completes
+    # when render is interrupted by error or cancelled
     if addon_prefs.tuneEnabler:
         device = aud.Device()
         device.volume=addon_prefs.tuneVol
         tunePlay = aud.Sound.file(addon_prefs.tuneLocation)
+        interruptPlay = aud.Sound.file(addon_prefs.interruptLocation)
+     #  handle = device.play(interruptPlay)  Interruption(cancel or error) tune play
         handle = device.play(tunePlay)
 
 
@@ -20,11 +25,22 @@ class tuneProps(bpy.types.AddonPreferences):
     bl_idname = __package__
     tuneloc = bpy.path.abspath(os.path.dirname(__file__))
 
+    #TODO create a user customization tunes - user to enter his desired tunes for the three cases
+
+    # Render Complete tune location
     tuneLocation: bpy.props.StringProperty(
         name = "The Tune",
         description = "Alert Tune when Render Completes",
         subtype = 'FILE_PATH',
         default = tuneloc + "/tune.mp3"
+    )
+
+    # Render Interruption tune location
+    interruptLocation: bpy.props.StringProperty(
+        name = "The Interruption Tune",
+        description = "Alert Tune when Render Completes",
+        subtype = 'FILE_PATH',
+        default = tuneloc + "/error.wav"
     )
 
     # Checkbox to enable the complete render tune play

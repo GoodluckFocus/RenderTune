@@ -21,12 +21,13 @@ bl_info = {
     "warning" : "",
     "category" : "Render"
 }
+#TODO Confirm the code to latest blender documentation and reliable for the next version of blender 2.83
 
 import bpy
 from .rendertune_panel import RENDER_PT_rendertune
 from .rendertune import tuneProps, play_tune
 
-
+#TODO Add the addon on the Render Top Bar Menu on Render 
 #def topbar_menu(self, context):
     #self.layout.operator(rendertune.bl_idname)
  #   self.layout.operator(tuneProps.bl_idname)
