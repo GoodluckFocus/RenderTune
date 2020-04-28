@@ -12,29 +12,36 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 bl_info = {
-    "name" : "Render Tune",
-    "author" : "Goodluck Focus", # inspired by Jason van Gumster (Fweeb)
-    "description" : "Plays A Tune on Frame Render Completion",
-    "blender" : (2, 80, 0),
-    "version" : (0, 0, 1),
+    "name" : "RenderTune",
+    "author" : "Goodluck Focus",
+    "description" : "Plays An Alert Tune when Render Completes",
+    "blender" : (2, 82, 0),
+    "version" : (2, 0, 1),
     "location" : "Render Settings > Render Tune",
     "warning" : "",
     "category" : "Render"
 }
+#TODO Confirm the code to latest blender documentation and reliable for the next version of blender 2.83
 
 import bpy
-from .renderTune_panel import renderTune_panel
-from .renderTune import tuneProps, play_tune
+from .rendertune_panel import RENDER_PT_rendertune
+from .rendertune import tuneProps, play_tune
+
+#TODO Add the addon on the Render Top Bar Menu on Render 
+#def topbar_menu(self, context):
+    #self.layout.operator(rendertune.bl_idname)
+ #   self.layout.operator(tuneProps.bl_idname)
 
 
-#TODO convert this to new code using bpy.utils.register_classes_factory()
 def register():
+    bpy.utils.register_class(RENDER_PT_rendertune)
     bpy.utils.register_class(tuneProps)
-    bpy.utils.register_class(renderTune_panel)
     bpy.types.RenderSettings.music_handle = None
     bpy.app.handlers.render_complete.append(play_tune)
+   # bpy.types.TOPBAR_MT_render.append(topbar_menu)
 
 def unregister():
+    bpy.utils.unregister_class(RENDER_PT_rendertune)
     bpy.utils.unregister_class(tuneProps)
-    bpy.utils.unregister_class(renderTune_panel)
     bpy.app.handlers.render_complete.remove(play_tune)
+   # bpy.types.TOPBAR_MT_render.remove(topbar_menu)
