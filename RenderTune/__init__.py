@@ -15,13 +15,14 @@ bl_info = {
     "name" : "RenderTune",
     "author" : "Goodluck Focus",
     "description" : "Plays An Alert Tune when Render Completes",
-    "blender" : (2, 82, 0),
-    "version" : (2, 0, 1),
+    "blender" : (4, 2, 0),
+    "version" : (1, 0, 0),
     "location" : "Render Settings > Render Tune",
     "warning" : "",
-    "category" : "Render"
+    "category" : "Render",
+    "Date":"2024"
 }
-#TODO Confirm the code to latest blender documentation and reliable for the next version of blender 2.83
+#TODO Confirm the code to latest blender documentation and reliable for the next version of blender 4.2
 
 import bpy
 from .rendertune_panel import RENDER_PT_rendertune
