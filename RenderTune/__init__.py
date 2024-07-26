@@ -48,3 +48,7 @@ def unregister():
     bpy.app.handlers.render_complete.remove(render_complete)
     bpy.app.handlers.render_cancel.remove(render_cancel)
    # bpy.types.TOPBAR_MT_render.remove(topbar_menu)
+
+
+if __name__ == "__main__":
+    register()

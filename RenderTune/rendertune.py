@@ -107,4 +107,4 @@ class AlertProps(bpy.types.AddonPreferences):
         min = 0.3, soft_max = 1
         ) #type: ignore
 
- #TODO create a user customization tunes - user to enter his desired tunes for the three cases
+#  #TODO create a user customization tunes - user to enter his desired tunes for the three cases
