@@ -26,7 +26,7 @@ bl_info = {
 
 import bpy
 from .rendertune_panel import RENDER_PT_rendertune
-from .rendertune import tuneProps, play_tune
+from .rendertune import AlertProps, render_complete, render_cancel
 
 #TODO Add the addon on the Render Top Bar Menu on Render 
 #def topbar_menu(self, context):
@@ -36,13 +36,15 @@ from .rendertune import tuneProps, play_tune
 
 def register():
     bpy.utils.register_class(RENDER_PT_rendertune)
-    bpy.utils.register_class(tuneProps)
+    bpy.utils.register_class(AlertProps)
     bpy.types.RenderSettings.music_handle = None
-    bpy.app.handlers.render_complete.append(play_tune)
+    bpy.app.handlers.render_complete.append(render_complete)
+    bpy.app.handlers.render_cancel.append(render_cancel)
    # bpy.types.TOPBAR_MT_render.append(topbar_menu)
 
 def unregister():
     bpy.utils.unregister_class(RENDER_PT_rendertune)
-    bpy.utils.unregister_class(tuneProps)
-    bpy.app.handlers.render_complete.remove(play_tune)
+    bpy.utils.unregister_class(AlertProps)
+    bpy.app.handlers.render_complete.remove(render_complete)
+    bpy.app.handlers.render_cancel.remove(render_cancel)
    # bpy.types.TOPBAR_MT_render.remove(topbar_menu)
