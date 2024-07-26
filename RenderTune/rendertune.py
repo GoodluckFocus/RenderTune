@@ -2,29 +2,6 @@ import bpy, os, aud
 from bpy.app.handlers import persistent
 
 
-# @persistent
-# def play_tune(scene):
-#     handle = bpy.types.RenderSettings.music_handle
-#     addon_prefs = bpy.context.preferences.addons[__package__].preferences
-    
-#     #TODO Create a logic for the 3 states
-#     # when render completes
-#     # when render is interrupted by error or cancelled
-#     if addon_prefs.successAlert:
-#         device = aud.Device()
-#         device.volume=addon_prefs.alertVol
-#         tunePlay = aud.Sound.file(addon_prefs.tuneLocation)
-#         interruptPlay = aud.Sound.file(addon_prefs.interruptLocation)
-#      #  handle = device.play(interruptPlay)  Interruption(cancel or error) tune play
-#         handle = device.play(tunePlay)
-#     else:
-#         device = aud.Device()
-#         device.volume=addon_prefs.alertVol
-#         tunePlay = aud.Sound.file(addon_prefs.tuneLocation)
-#         interruptPlay = aud.Sound.file(addon_prefs.interruptLocation)
-#         handle = device.play(interruptPlay)   # Interruption(cancel or error) tune play
-
-
 @persistent
 def render_complete(scene):
     """Handler for when rendering completes successfully"""
@@ -41,7 +18,7 @@ def render_complete(scene):
         except Exception as e:
             print(f"Error playing sound: {e}")
 
-#@persistent
+@persistent
 def render_cancel(scene):
     """Handler for when rendering is cancelled"""
     addon_prefs =bpy.context.preferences.addons[__package__].preferences
@@ -107,4 +84,5 @@ class AlertProps(bpy.types.AddonPreferences):
         min = 0.3, soft_max = 1
         ) #type: ignore
 
-#  #TODO create a user customization tunes - user to enter his desired tunes for the three cases
+#TODO create an option for the user to use different tunes from default options
+#TODO Create e-mail notification module when render is done

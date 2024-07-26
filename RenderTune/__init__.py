@@ -28,7 +28,7 @@ import bpy
 from .rendertune_panel import RENDER_PT_rendertune
 from .rendertune import AlertProps, render_complete, render_cancel
 
-#TODO Add the addon on the Render Top Bar Menu on Render 
+#TODO Add the addon on the Render Top Bar Menu on Render Tap
 #def topbar_menu(self, context):
     #self.layout.operator(rendertune.bl_idname)
  #   self.layout.operator(tuneProps.bl_idname)
@@ -48,7 +48,3 @@ def unregister():
     bpy.app.handlers.render_complete.remove(render_complete)
     bpy.app.handlers.render_cancel.remove(render_cancel)
    # bpy.types.TOPBAR_MT_render.remove(topbar_menu)
-
-
-if __name__ == "__main__":
-    register()
