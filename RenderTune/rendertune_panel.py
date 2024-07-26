@@ -14,8 +14,8 @@ class RENDER_PT_rendertune(bpy.types.Panel):
         addon_prefs =bpy.context.preferences.addons[__package__].preferences
         layout = self.layout
 
-        layout.prop(addon_prefs, "tuneEnabler") #Render Complete tune
-        layout.prop(addon_prefs, "errorTune") # Render Error tune
-        layout.prop(addon_prefs, "cancelTune") #Render Cancellation Tune
-        layout.prop(addon_prefs, "tuneVol")  #Volume dialing Slide
+        layout.prop(addon_prefs, "successAlert") #Render Complete tune
+        layout.prop(addon_prefs, "errorAlert") # Render Error tune
+        layout.prop(addon_prefs, "cancelAlert") #Render Cancellation Tune
+        layout.prop(addon_prefs, "alertVol")  #Volume dialing Slide
         
