@@ -15,12 +15,12 @@ bl_info = {
     "name" : "RenderTune",
     "author" : "Goodluck Focus",
     "description" : "Plays An Alert Tune when Render Completes",
-    "blender" : (4, 2, 0),
+    "blender" : (4, 4, 0),
     "version" : (1, 0, 0),
     "location" : "Render Settings > Render Tune",
     "warning" : "",
     "category" : "Render",
-    "Date":"2024"
+    "Date":"2025"
 }
 #TODO Confirm the code to latest blender documentation and reliable for the next version of blender 4.2
 
