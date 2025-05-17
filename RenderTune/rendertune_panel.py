@@ -18,4 +18,6 @@ class RENDER_PT_rendertune(bpy.types.Panel):
         layout.prop(addon_prefs, "errorAlert") #Render Error tune
         layout.prop(addon_prefs, "cancelAlert") #Render Cancellation Tune
         layout.prop(addon_prefs, "alertVol")  #Volume dialing Slide
-        
+
+# i could add more functionality
+# more and more

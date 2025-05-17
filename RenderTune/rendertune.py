@@ -85,4 +85,4 @@ class AlertProps(bpy.types.AddonPreferences):
         ) #type: ignore
 
 #TODO create an option for the user to use different tunes from default options
-#TODO Create e-mail notification module when render is done
+#TODO Create e-mail notification module when render is done or something on the local network
