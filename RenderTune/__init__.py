@@ -16,7 +16,7 @@ bl_info = {
     "author" : "Goodluck Focus",
     "description" : "Plays An Alert Tune when Render Completes",
     "blender" : (4, 4, 0),
-    "version" : (1, 0, 0),
+    "version" : (2, 0, 0),
     "location" : "Render Settings > Render Tune",
     "warning" : "",
     "category" : "Render",
@@ -49,4 +49,4 @@ def unregister():
     bpy.app.handlers.render_cancel.remove(render_cancel)
    # bpy.types.TOPBAR_MT_render.remove(topbar_menu)
 
-#working on for the new blender version 2025..4.4.0
+#Just testing the git commit
