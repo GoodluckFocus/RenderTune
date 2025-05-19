@@ -83,6 +83,3 @@ class AlertProps(bpy.types.AddonPreferences):
         default = 0.5,
         min = 0.3, soft_max = 1
         ) #type: ignore
-
-#TODO create an option for the user to use different tunes from default options
-#TODO Create e-mail notification module when render is done
