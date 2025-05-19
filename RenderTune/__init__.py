@@ -22,17 +22,10 @@ bl_info = {
     "category" : "Render",
     "Date":"2025"
 }
-#TODO Confirm the code to latest blender documentation and reliable for the next version of blender 4.2
 
 import bpy
 from .rendertune_panel import RENDER_PT_rendertune
 from .rendertune import AlertProps, render_complete, render_cancel
-
-#TODO Add the addon on the Render Top Bar Menu on Render Tap
-#def topbar_menu(self, context):
-    #self.layout.operator(rendertune.bl_idname)
- #   self.layout.operator(tuneProps.bl_idname)
-
 
 def register():
     bpy.utils.register_class(RENDER_PT_rendertune)
