@@ -40,7 +40,7 @@ class AlertProps(bpy.types.AddonPreferences):
     bl_idname = __package__
     tuneloc = bpy.path.abspath(os.path.dirname(__file__))
 
-   
+   #needs new CC-0 tunes
 
     #Render Complete tune location
     tuneLocation: bpy.props.StringProperty(
