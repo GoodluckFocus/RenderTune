@@ -47,7 +47,7 @@ class AlertProps(bpy.types.AddonPreferences):
        name = "The Tune",
        description = "Alert Tune when Render Completes",
        subtype = 'FILE_PATH',
-       default = tuneloc + "/tune.mp3"
+       default = tuneloc + "/success-fanfare-trumpets-6185.mp3"
     ) #type:ignore
 
     # Render Interruption tune location
@@ -55,7 +55,7 @@ class AlertProps(bpy.types.AddonPreferences):
         name = "The Interruption Tune",
         description = "Alert Tune when Render Completes",
         subtype = 'FILE_PATH',
-        default = tuneloc + "/error.wav"
+        default = tuneloc + "/cartoon-fail-trumpet-278822.mp3"
     ) # type: ignore
 
     # Checkbox to enable the complete render tune play
